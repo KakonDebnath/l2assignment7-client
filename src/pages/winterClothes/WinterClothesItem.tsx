@@ -1,4 +1,6 @@
-import React from 'react';
+import { cn } from '@/lib/utils';
+import { ThemeContext } from '@/providers/ThemeProvider';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 export type TWinterClothesItem = {
   _id: string;
@@ -14,8 +16,14 @@ type TWinterClothesCardProps = {
 };
 
 const WinterClothesItem: React.FC<TWinterClothesCardProps> = ({ item }) => {
+  const themeContext = useContext(ThemeContext);
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+    <div
+      className={cn('bg-white rounded-lg shadow-md overflow-hidden', {
+        'border border-white bg-slate-800 bg-opacity-50':
+          themeContext?.theme === 'dark',
+      })}
+    >
       <img
         src={item.image}
         alt={item.title}
@@ -27,7 +35,7 @@ const WinterClothesItem: React.FC<TWinterClothesCardProps> = ({ item }) => {
         <p className="text-gray-700 mb-2">Size: {item.size}</p>
         <Link
           to={`/winter-clothes/${item._id}`}
-          className="text-blue-600 hover:underline"
+          className="text-[#38BDF8] hover:underline"
         >
           View Details
         </Link>

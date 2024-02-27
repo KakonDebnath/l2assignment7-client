@@ -89,7 +89,7 @@ const TestimonialSection = () => {
         className="mySwiper"
       >
         {testimonials.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
+          <SwiperSlide style={{ padding: '20px' }} key={testimonial.id}>
             <TestimonialItem key={testimonial.id} items={testimonial} />
           </SwiperSlide>
         ))}

@@ -67,7 +67,7 @@ const Login = () => {
       variants={loginAnimation}
       initial="hidden"
       animate="visible"
-      className="mb-10"
+      className="min-h-[calc(100vh-68px)]"
     >
       <h2>Login Now</h2>
       <Form onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}>

@@ -1,3 +1,7 @@
+import { cn } from '@/lib/utils';
+import { ThemeContext } from '@/providers/ThemeProvider';
+import { useContext } from 'react';
+
 export type TAboutUsItemProps = {
   item: {
     _id: string;
@@ -8,8 +12,17 @@ export type TAboutUsItemProps = {
 };
 
 const AboutUsItem: React.FC<TAboutUsItemProps> = ({ item }) => {
+  const themeContext = useContext(ThemeContext);
   return (
-    <div className="p-6 bg-white rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-2 hover:shadow-xl">
+    <div
+      className={cn(
+        'p-6 rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:-translate-y-2 hover:shadow-xl',
+        {
+          'border border-white bg-slate-800 bg-opacity-50':
+            themeContext?.theme === 'dark',
+        }
+      )}
+    >
       <div className="mb-4">
         <img
           src={item.image}
@@ -17,8 +30,14 @@ const AboutUsItem: React.FC<TAboutUsItemProps> = ({ item }) => {
           className="w-full h-auto rounded-md"
         />
       </div>
-      <h3 className="text-xl font-bold mb-2 text-blue-600">{item.title}</h3>
-      <p className="text-gray-700">{item.details}</p>
+      <h3
+        className={cn('text-xl font-bold mb-2 text-blue-600', {
+          'text-[#38BDF8]': themeContext?.theme === 'dark',
+        })}
+      >
+        {item.title}
+      </h3>
+      <p className="">{item.details}</p>
     </div>
   );
 };

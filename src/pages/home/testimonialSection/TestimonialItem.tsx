@@ -1,4 +1,6 @@
 import { cn } from '@/lib/utils';
+import { ThemeContext } from '@/providers/ThemeProvider';
+import { useContext } from 'react';
 
 type TItems = {
   id: number;
@@ -15,10 +17,17 @@ const TestimonialItem = ({
   items: TItems;
   className?: string;
 }) => {
+  const themeContext = useContext(ThemeContext);
   return (
     <div
       className={cn(
-        'hover:bg-gradient-to-r hover:from-[#fec600] hover:to-[#cb9201] rounded-2xl p-10 pr-20 transition-all shadow-md',
+        'hover:bg-gradient-to-r hover:from-[rgba(6,28,61,0.7)] hover:to-[rgba(6,28,61,1)] rounded-2xl p-10 pr-20 transition-all shadow-md',
+        {
+          'hover:border border-white': themeContext?.theme === 'dark',
+        },
+        {
+          'hover:text-[#94A3B8]': themeContext?.theme === 'light',
+        },
         className
       )}
     >

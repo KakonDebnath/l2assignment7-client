@@ -64,7 +64,12 @@ const Register = () => {
     }
   };
   return (
-    <motion.div variants={registerAnimation} initial="hidden" animate="visible">
+    <motion.div
+      variants={registerAnimation}
+      initial="hidden"
+      animate="visible"
+      className="min-h-[calc(100vh-68px)]"
+    >
       <h2>Register Now</h2>
       <Form onSubmit={handleSubmit(onSubmit) as SubmitHandler<FieldValues>}>
         <FormSection>
