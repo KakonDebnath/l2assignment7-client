@@ -1,12 +1,16 @@
 import App from '@/App';
 import AdminLayout from '@/components/layouts/adminLayout/AdminLayout';
 import ErrorPage from '@/pages/ErrorPage/ErrorPage';
+import About from '@/pages/about/About';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
+import AddCommunity from '@/pages/admin/addCommunity/AddCommunity';
 import AddTestimonial from '@/pages/admin/addtestimonial/AddTestimonial';
 import AllWinterClothes from '@/pages/admin/allWinterClothes/AllWinterClothes';
 import CreateClothes from '@/pages/admin/createClothes/CreateClothes';
 import DonateNow from '@/pages/admin/donateNow/DonateNow';
 import LeaderBoard from '@/pages/admin/leaderBoard/LeaderBoard';
+import AddVolunteer from '@/pages/admin/volunteer/AddVolunteer';
+import CommunityPage from '@/pages/community/CommunityPage';
 import Home from '@/pages/home/Home';
 import Login from '@/pages/login/Login';
 import Register from '@/pages/login/Register';
@@ -31,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: 'winter-clothes/:id',
         element: <WinterClothesDetailPage />,
+      },
+      {
+        path: 'about-us',
+        element: <About />,
+      },
+      {
+        path: 'community',
+        element: <CommunityPage />,
       },
       {
         path: 'login',
@@ -69,6 +81,14 @@ const router = createBrowserRouter([
       {
         path: 'create-testimonial',
         element: <AddTestimonial/>,
+      },
+      {
+        path: 'signup-volunteer',
+        element: <AddVolunteer/>,
+      },
+      {
+        path: 'add-community',
+        element: <AddCommunity/>,
       },
     ],
   },

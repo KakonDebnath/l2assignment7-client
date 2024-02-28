@@ -57,6 +57,8 @@ const Navbar = () => {
         <div className="space-x-5 font-medium roboto flex items-center">
           <NavLink to="/">Home</NavLink>
           <NavLink to="winter-clothes">All Winter Clothes</NavLink>
+          <NavLink to="about-us">About Us</NavLink>
+          <NavLink to="community">Community</NavLink>
           {email && <NavLink to="dashboard">Dashboard</NavLink>}
 
           <span onClick={handleToggle} className="cursor-pointer text-xl">

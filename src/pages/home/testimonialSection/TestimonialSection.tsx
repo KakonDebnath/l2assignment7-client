@@ -14,7 +14,6 @@ import { useGetAllTestimonialsQuery } from '@/redux/features/testimonial/testimo
 const TestimonialSection = () => {
   const { data: testimonialData, isLoading } =
     useGetAllTestimonialsQuery(undefined);
-  console.log(testimonialData);
   return (
     <Container>
       <h2 className="text-center py-10">See All Top Donor</h2>

@@ -6,7 +6,7 @@ export type TWinterClothesItem = {
   _id: string;
   title: string;
   category: string;
-  size: string;
+  size: string[];
   image: string;
   description?: string;
 };
@@ -32,7 +32,7 @@ const WinterClothesItem: React.FC<TWinterClothesCardProps> = ({ item }) => {
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
         <p className="text-gray-700 mb-2">{item.category}</p>
-        <p className="text-gray-700 mb-2">Size: {item.size}</p>
+        <p className="text-gray-700 mb-2 uppercase">Size: {item.size.join(', ')}</p>
         <Link
           to={`/winter-clothes/${item._id}`}
           className="text-[#38BDF8] hover:underline"

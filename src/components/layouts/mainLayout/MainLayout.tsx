@@ -5,14 +5,15 @@ import Container from '@/components/container/Container';
 
 const MainLayout = () => {
   const location = useLocation();
-  const noFooter = location.pathname.includes("/login") || location.pathname.includes("/register");
+  const noFooter =
+    location.pathname.includes('/login') ||
+    location.pathname.includes('/register') ||
+    location.pathname.includes('/about-us') 
   return (
     <Container>
       <Navbar />
       <Outlet />
-      {
-        !noFooter && <Footer />
-      }
+      {!noFooter && <Footer />}
     </Container>
   );
 };

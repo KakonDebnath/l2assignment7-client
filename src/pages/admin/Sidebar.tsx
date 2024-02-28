@@ -2,8 +2,13 @@ import { cn } from '@/lib/utils';
 import { getUserEmail, logout } from '@/redux/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { LuLogOut, LuLayoutDashboard } from 'react-icons/lu';
-import { MdOutlineAddModerator, MdOutlineAddShoppingCart, MdOutlineLeaderboard } from 'react-icons/md';
-import { BiDonateHeart } from "react-icons/bi";
+import {
+  MdOutlineAddModerator,
+  MdOutlineAddShoppingCart,
+  MdOutlineLeaderboard,
+  MdOutlineSportsKabaddi,
+} from 'react-icons/md';
+import { BiDonateHeart } from 'react-icons/bi';
 import { GiClothes } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -111,6 +116,34 @@ const Sidebar = () => {
         >
           <MdOutlineAddModerator className="shrink-0" />
           <span>Add Testimonial</span>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            cn(
+              'px-3 bg-gray py-2 capitalize rounded-md transition-all duration-300 flex items-center gap-2',
+              {
+                'bg-dark-gray text-light-gray font-semibold': isActive,
+              }
+            )
+          }
+          to="/dashboard/signup-volunteer"
+        >
+          <MdOutlineSportsKabaddi className="shrink-0" />
+          <span>Sign Up Volunteer</span>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            cn(
+              'px-3 bg-gray py-2 capitalize rounded-md transition-all duration-300 flex items-center gap-2',
+              {
+                'bg-dark-gray text-light-gray font-semibold': isActive,
+              }
+            )
+          }
+          to="/dashboard/add-community"
+        >
+          <MdOutlineSportsKabaddi className="shrink-0" />
+          <span>Add Community</span>
         </NavLink>
         <NavLink
           onClick={handleLogout}

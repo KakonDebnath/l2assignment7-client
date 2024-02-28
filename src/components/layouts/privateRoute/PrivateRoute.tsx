@@ -1,25 +1,4 @@
-// import { getCurrentToken } from '@/redux/features/auth/authSlice';
-// import { useAppSelector } from '@/redux/hooks';
-// import { jwtDecode } from 'jwt-decode';
 
-// import { Navigate, useLocation } from 'react-router-dom';
-
-// const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
-//   const token = useAppSelector(getCurrentToken);
-//   const location = useLocation();
-
-//   const decoded = jwtDecode(token);
-//   const currentTime = Math.floor(Date.now() / 1000);
-//   console.log(currentTime);
-//   console.log(decoded);
-
-//   if (!token) {
-//     return <Navigate to="/login" state={{ from: location }} replace={true} />;
-//   }
-//   return children;
-// };
-
-// export default PrivateRoute;
 
 import { getCurrentToken, logout } from '@/redux/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';

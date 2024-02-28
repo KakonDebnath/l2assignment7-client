@@ -15,7 +15,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 export const AllClothesEditForm = () => {
   const id = useAppSelector((state) => state.clothes.clotheId);
-  const { data } = useGetSingleClotheQuery(id);
+  const { data } = useGetSingleClotheQuery(id, {skip: !id});
   const [updateClothe] = useUpdateClothesMutation();
 
   const {

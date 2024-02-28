@@ -43,7 +43,7 @@ const AllWinterClothes = () => {
           <GiClothes className="text-md" />
         </Link>
       </div>
-
+      {isLoading && <span>Loading...</span>}
       <Table>
         <TableHeader>
           <TableRow>
@@ -55,7 +55,7 @@ const AllWinterClothes = () => {
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
-        {isLoading && <span>Loading...</span>}
+
         <TableBody>
           {data?.data?.map((item: TWinterClothesItem, i: number) => (
             <TableRow key={item._id}>
