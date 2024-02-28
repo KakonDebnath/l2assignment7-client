@@ -4,6 +4,8 @@ import ErrorPage from '@/pages/ErrorPage/ErrorPage';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
 import AllWinterClothes from '@/pages/admin/allWinterClothes/AllWinterClothes';
 import CreateClothes from '@/pages/admin/createClothes/CreateClothes';
+import DonateNow from '@/pages/admin/donateNow/DonateNow';
+import LeaderBoard from '@/pages/admin/leaderBoard/LeaderBoard';
 import Home from '@/pages/home/Home';
 import Login from '@/pages/login/Login';
 import Register from '@/pages/login/Register';
@@ -54,6 +56,14 @@ const router = createBrowserRouter([
       {
         path: 'create-winter-clothes',
         element: <CreateClothes />,
+      },
+      {
+        path: 'donate-now',
+        element: <DonateNow />,
+      },
+      {
+        path: 'leaderBoard',
+        element: <LeaderBoard/>,
       },
     ],
   },

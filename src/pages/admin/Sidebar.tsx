@@ -2,7 +2,8 @@ import { cn } from '@/lib/utils';
 import { getUserEmail, logout } from '@/redux/features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { LuLogOut, LuLayoutDashboard } from 'react-icons/lu';
-import { MdOutlineAddShoppingCart } from 'react-icons/md';
+import { MdOutlineAddShoppingCart, MdOutlineLeaderboard } from 'react-icons/md';
+import { BiDonateHeart } from "react-icons/bi";
 import { GiClothes } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -68,6 +69,34 @@ const Sidebar = () => {
         >
           <MdOutlineAddShoppingCart className="shrink-0" />
           <span>Create Clothes</span>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            cn(
+              'px-3 bg-gray py-2 capitalize rounded-md transition-all duration-300 flex items-center gap-2',
+              {
+                'bg-dark-gray text-light-gray font-semibold': isActive,
+              }
+            )
+          }
+          to="/dashboard/donate-now"
+        >
+          <BiDonateHeart className="shrink-0" />
+          <span>Donate Now</span>
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            cn(
+              'px-3 bg-gray py-2 capitalize rounded-md transition-all duration-300 flex items-center gap-2',
+              {
+                'bg-dark-gray text-light-gray font-semibold': isActive,
+              }
+            )
+          }
+          to="/dashboard/leaderboard"
+        >
+          <MdOutlineLeaderboard className="shrink-0" />
+          <span>Leader Board</span>
         </NavLink>
         <NavLink
           onClick={handleLogout}

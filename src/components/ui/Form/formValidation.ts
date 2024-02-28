@@ -1,6 +1,7 @@
 import { z } from 'zod';
 
 export type TLoginFormValidationType = z.infer<typeof LoginFormZodSchema>;
+export type TDonateFormValidationType = z.infer<typeof DonateFormZodSchema>;
 
 export type TRegisterFormValidationType = z.infer<typeof RegisterFormZodSchema>;
 export type TCreateClotheFormValidationType = z.infer<
@@ -24,4 +25,7 @@ export const CreateClothFormZodSchema = z.object({
   title: z.string().min(1, { message: 'Title is required' }),
   size: z.string().min(1, { message: 'Size is required' }),
   description: z.string().min(1, { message: 'Description is required' }),
+});
+export const DonateFormZodSchema = z.object({
+  amount: z.string().min(2, { message: 'Amount is required' }),
 });
