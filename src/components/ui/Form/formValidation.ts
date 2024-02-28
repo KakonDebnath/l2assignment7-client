@@ -7,6 +7,9 @@ export type TRegisterFormValidationType = z.infer<typeof RegisterFormZodSchema>;
 export type TCreateClotheFormValidationType = z.infer<
   typeof CreateClothFormZodSchema
 >;
+export type TAddTestimonialFormValidationType = z.infer<
+  typeof AddTestimonialFormZodSchema
+>;
 
 export const LoginFormZodSchema = z.object({
   email: z.string().email('Email is required'),
@@ -28,4 +31,14 @@ export const CreateClothFormZodSchema = z.object({
 });
 export const DonateFormZodSchema = z.object({
   amount: z.string().min(2, { message: 'Amount is required' }),
+});
+export const AddTestimonialFormZodSchema = z.object({
+  name: z.string().min(2, { message: 'Name is required' }),
+  designation: z.string().min(2, { message: 'Designation is required' }),
+  image: z.string().min(2, { message: 'Image is required' }),
+  message: z.string().min(2, { message: 'Massage is required' }),
+  ratting: z
+    .string()
+    .min(1, { message: 'Ratting must be 1-5 ' })
+    .max(5),
 });

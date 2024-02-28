@@ -2,8 +2,9 @@ import { cn } from '@/lib/utils';
 import { ThemeContext } from '@/providers/ThemeProvider';
 import { useContext } from 'react';
 
-type TItems = {
-  id: number;
+export type TTestimonialItems = {
+  _id: string;
+  email: string;
   name: string;
   designation: string;
   message: string;
@@ -14,7 +15,7 @@ const TestimonialItem = ({
   items,
   className,
 }: {
-  items: TItems;
+  items: TTestimonialItems;
   className?: string;
 }) => {
   const themeContext = useContext(ThemeContext);

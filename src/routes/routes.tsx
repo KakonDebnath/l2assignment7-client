@@ -2,6 +2,7 @@ import App from '@/App';
 import AdminLayout from '@/components/layouts/adminLayout/AdminLayout';
 import ErrorPage from '@/pages/ErrorPage/ErrorPage';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
+import AddTestimonial from '@/pages/admin/addtestimonial/AddTestimonial';
 import AllWinterClothes from '@/pages/admin/allWinterClothes/AllWinterClothes';
 import CreateClothes from '@/pages/admin/createClothes/CreateClothes';
 import DonateNow from '@/pages/admin/donateNow/DonateNow';
@@ -62,8 +63,12 @@ const router = createBrowserRouter([
         element: <DonateNow />,
       },
       {
-        path: 'leaderBoard',
+        path: 'leader-board',
         element: <LeaderBoard/>,
+      },
+      {
+        path: 'create-testimonial',
+        element: <AddTestimonial/>,
       },
     ],
   },
