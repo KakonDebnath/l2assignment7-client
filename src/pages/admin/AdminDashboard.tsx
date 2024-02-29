@@ -36,14 +36,14 @@ const AdminDashboard = () => {
     ],
   };
   return (
-    <Container>
+    <div>
       <h2>Supply Statistics</h2>
       <div className="flex justify-center items-center min-h-[calc(100vh-120px)]">
         <div style={{ width: '400px', height: '400px' }}>
           <Pie data={data} />
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
