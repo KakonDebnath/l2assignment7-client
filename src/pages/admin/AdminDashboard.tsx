@@ -1,4 +1,3 @@
-import Container from '@/components/container/Container';
 import { useGetAllSuppliesDataQuery } from '@/redux/features/peiChart/peiChartApi';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
