@@ -8,9 +8,16 @@ import {
 } from '@/components/ui/table';
 import { useLeaderboardQuery } from '@/redux/features/donate/donateApi';
 
+export type TLeaderBoardData = {
+  _id: string;
+  amount: number;
+  email: string;
+  userId: string;
+};
 
 const LeaderBoard = () => {
   const { data: LearboardData, isLoading } = useLeaderboardQuery(undefined);
+
   return (
     <div className="container mx-auto ">
       <h3 className="text-center text-xl font-semibold py-5">Leader Board</h3>
@@ -25,7 +32,7 @@ const LeaderBoard = () => {
         </TableHeader>
         {isLoading && <span>Loading...</span>}
         <TableBody>
-          {LearboardData?.data?.map((item, i) => (
+          {LearboardData?.data?.map((item: TLeaderBoardData, i: number) => (
             <TableRow key={item._id}>
               <TableCell className="w-20">{i + 1}</TableCell>
               <TableCell>{item.email}</TableCell>

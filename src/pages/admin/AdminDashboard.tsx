@@ -5,6 +5,12 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
+export type TSupplyData = {
+  _id: string;
+  name: string;
+  quantity: number;
+};
+
 const AdminDashboard = () => {
   const { data: supplyData, isLoading } = useGetAllSuppliesDataQuery(undefined);
 
@@ -13,10 +19,10 @@ const AdminDashboard = () => {
     return <div>Loading...</div>;
   }
   const data = {
-    labels: supplyData?.data?.map((item) => item.name),
+    labels: supplyData?.data?.map((item: TSupplyData) => item.name),
     datasets: [
       {
-        data: supplyData?.data?.map((item) => item.quantity),
+        data: supplyData?.data?.map((item: TSupplyData) => item.quantity),
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',

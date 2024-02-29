@@ -10,9 +10,19 @@ import {
 
 import { useGetAllVolunteerQuery } from '@/redux/features/volunteer/volunteerApi';
 
+export type TVolunteer = {
+  _id: string;
+  creatorEmail: string;
+  name: string;
+  email: string;
+  image: string;
+  phone: string;
+  location: string;
+  userId: string;
+};
+
 const AllWinterClothes = () => {
   const { data, isLoading } = useGetAllVolunteerQuery(undefined);
-
   return (
     <div className="container mx-auto min-h-[calc(100vh-100px)]">
       <h3 className="text-center text-3xl font-semibold py-5">
@@ -33,7 +43,7 @@ const AllWinterClothes = () => {
         </TableHeader>
 
         <TableBody>
-          {data?.data?.map((item, i: number) => (
+          {data?.data?.map((item: TVolunteer, i: number) => (
             <TableRow key={item._id}>
               <TableCell className="w-20">{i + 1}</TableCell>
               <TableCell className="p-1 rounded-md w-40 px-5">
