@@ -6,6 +6,7 @@ const communityApi = baseApi.injectEndpoints({
       query: () => ({
         url: '/community',
       }),
+      providesTags: ['communityPost'],
     }),
     createCommunityPost: builder.mutation({
       query: (communityPostData) => ({
@@ -13,6 +14,7 @@ const communityApi = baseApi.injectEndpoints({
         method: 'POST',
         body: communityPostData,
       }),
+      invalidatesTags: ['communityPost'],
     }),
   }),
 });

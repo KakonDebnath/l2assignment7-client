@@ -6,6 +6,7 @@ const donateAPi = baseApi.injectEndpoints({
       query: () => ({
         url: '/leaderboard',
       }),
+      providesTags: ['donateLeaderboard'],
     }),
     addDonate: builder.mutation({
       query: (donateData) => ({
@@ -13,6 +14,7 @@ const donateAPi = baseApi.injectEndpoints({
         method: 'POST',
         body: donateData,
       }),
+      invalidatesTags: ['donateLeaderboard'],
     }),
   }),
 });

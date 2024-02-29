@@ -6,6 +6,7 @@ const volunteerApi = baseApi.injectEndpoints({
       query: () => ({
         url: '/volunteers',
       }),
+      providesTags: ['volunteer'],
     }),
     signUpVolunteer: builder.mutation({
       query: (volunteerData) => ({
@@ -13,6 +14,7 @@ const volunteerApi = baseApi.injectEndpoints({
         method: 'POST',
         body: volunteerData,
       }),
+      invalidatesTags: ['volunteer'],
     }),
   }),
 });

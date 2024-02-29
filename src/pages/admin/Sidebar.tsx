@@ -6,6 +6,7 @@ import {
   MdOutlineAddModerator,
   MdOutlineAddShoppingCart,
   MdOutlineLeaderboard,
+  MdOutlinePostAdd,
   MdOutlineSportsKabaddi,
 } from 'react-icons/md';
 import { BiDonateHeart } from 'react-icons/bi';
@@ -142,7 +143,7 @@ const Sidebar = () => {
           }
           to="/dashboard/add-community"
         >
-          <MdOutlineSportsKabaddi className="shrink-0" />
+          <MdOutlinePostAdd className="shrink-0" />
           <span>Add Community</span>
         </NavLink>
         <NavLink
