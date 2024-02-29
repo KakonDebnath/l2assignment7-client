@@ -7,9 +7,10 @@ const CommunityPage = () => {
     useGetAllCommunityPostQuery(undefined);
   return (
     <Container>
+      <h2>Community Gratitude Wall</h2>
       {isLoading && <span>Loading.......</span>}
       {communityPostData?.data?.map((item) => (
-        <div className="px-10 space-y-4 py-10" key={item?._id}>
+        <div className="px-10 space-y-4 pt-5" key={item?._id}>
           <div className="flex items-center gap-4">
             <img src="" alt="" className="bg-red size-14 rounded-full" />
             <div className="flex flex-col">
